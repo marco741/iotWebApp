@@ -30,5 +30,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "app for clapToLightUp IoT Project",
+  "main": "index.js",
+  "repository": "https://github.com/marco741/iotApp",
+  "author": "marco741",
+  "license": "MIT"
 }
