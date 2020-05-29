@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import Colors from "./colors";
 import styled from "styled-components";
 import { ReactComponent as LuceAccesa } from "../assets/luce-accesa.svg";
@@ -24,25 +24,30 @@ const reducer = (state, action) => {
 };
 
 const Home = ({ data }) => {
+  const [brightness, setBrightness] = useState();
   const [luce, setLuce] = useReducer(reducer, false);
   const [clap, setClap] = useReducer(reducer, false);
   const [sound, setSound] = useReducer(reducer, false);
 
-  const handleLeds = (topic, message) => {
+  const on_message = (topic, message) => {
     if (topic.toString() === "current/leds") {
       const [l, c, s] = message
         .toString()
         .split(" ")
         .map((s) => parseInt(s));
-      console.log(l, c, s);
+      console.log("MCU Led State: ", l, c, s);
       setLuce({ type: l ? "SET" : "RESET" });
       setClap({ type: c ? "SET" : "RESET" });
       setSound({ type: s ? "SET" : "RESET" });
+    } else if (topic.toString() === "current/light") {
+      const b = parseFloat(message);
+      console.log("Brightness Detected: ", b);
+      setBrightness(b);
     }
   };
 
   useEffect(() => {
-    Api.setOnMessage(handleLeds);
+    Api.setOnMessage(on_message);
   }, []);
 
   return (
@@ -56,7 +61,11 @@ const Home = ({ data }) => {
             <LuceSpenta style={{ height: 150 }} />
           )}
         </Card>
-        <LightAmount />
+        {brightness !== undefined ? (
+          <LightAmount brightness={brightness} />
+        ) : (
+          <></>
+        )}
       </StatusBlock>
       <ModeBlock>
         <ModeCardBlock>

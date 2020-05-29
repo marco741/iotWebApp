@@ -13,10 +13,14 @@ const BorderLinearProgress = withStyles({
   },
 })(LinearProgress);
 
-export default function LightAmount() {
+export default function LightAmount({ brightness }) {
+
   return (
     <LightAmountContainer>
-      <BorderLinearProgress variant="determinate" value={50} />
+      <BorderLinearProgress
+        variant="determinate"
+        value={brightness}
+      />
       <LightAmoutTitle>Brightness detected</LightAmoutTitle>
     </LightAmountContainer>
   );
