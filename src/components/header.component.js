@@ -1,12 +1,16 @@
 import React from "react";
+import NotConnected from "./not-connected.component";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Colors from './colors';
+import Colors from "./colors";
 
-const Header = () => {
+const Header = ({ mcuConnected }) => {
   return (
     <HeaderContainer>
-      <HeaderTitle>Clap To Turn The Light Up!</HeaderTitle>
+      <HeaderTitleBox>
+        <HeaderTitle>Clap To Turn The Light Up!</HeaderTitle>
+        {!mcuConnected ? <NotConnected /> : <></>}
+      </HeaderTitleBox>
       <HeaderMenu>
         <HeaderLink to="/">Home</HeaderLink>
         <HeaderLink to="/donotdisturb">Do Not Disturb</HeaderLink>
@@ -23,6 +27,15 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   background-color: ${Colors.nyanza};
   padding: 0 3%;
+`;
+
+export const HeaderTitleBox = styled.div`
+  font-weight: bold;
+  color: ${Colors.darkpurple};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
 `;
 
 export const HeaderTitle = styled.p`
@@ -53,8 +66,3 @@ export const HeaderLink = styled(Link)`
     transition: 1s;
   }
 `;
-
-
-
-
-

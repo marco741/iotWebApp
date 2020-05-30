@@ -28,6 +28,8 @@ export default function LightAmount({ brightness }) {
 
 export const LightAmountContainer = styled.div`
   width: 50%;
+  min-width: 400px;
+  margin-top: 50px;
 `;
 
 export const LightAmoutTitle = styled.p`
