@@ -2,7 +2,7 @@
   "name": "iot-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marco741.github.io/iotWebApp",
+  "homepage": "https://marco741.github.io/iotWebApp/",
   "dependencies": {
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",
@@ -45,7 +45,7 @@
   },
   "description": "app for clapToLightUp IoT Project",
   "main": "index.js",
-  "repository": "https://github.com/marco741/iotApp",
+  "repository": "https://github.com/marco741/iotWebApp",
   "author": "marco741",
   "license": "MIT"
 }
