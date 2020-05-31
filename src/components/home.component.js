@@ -76,14 +76,15 @@ export const HomeContainer = styled.div`
   background-color: ${Colors.lightorange};
   height: 100%;
   align-items: center;
+  justify-content: center;
 `;
 
 export const UpperContainer = styled.div`
-  margin-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
+  padding-bottom: 50px;
 `;
 
 export const Card = styled.div`

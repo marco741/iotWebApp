@@ -70,16 +70,17 @@ export const DNDContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
   background-color: ${Colors.lightorange};
   height: 100%;
-  padding-top: 50px;
+  padding-bottom: 100px;
 `;
 
 export const TimeSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 470px;
+  height: 520px;
 `;
 
 export const TimeContainer = styled.div`
@@ -115,6 +116,7 @@ export const ControlSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   height: 470px;
 `;
 
@@ -133,13 +135,14 @@ export const ToggleLabel = styled.p`
   font-weight: bold;
   text-align: center;
   color: ${Colors.darkpurple};
+  padding: 0;
+  margin: 0;
 `;
 
 export const SubmitButton = styled.div`
   display: flex;
   height: 70px;
   width: 80%;
-  margin-top: 20px;
   border-radius: 8px;
   justify-content: center;
   align-items: center;
@@ -147,7 +150,8 @@ export const SubmitButton = styled.div`
   box-shadow: ${Colors.darkpurpleshadow} 0px 8px 0px;
   cursor: pointer;
   :active {
-    margin-top: 28px;
+    margin-top: 8px;
+    margin-bottom: -8px;
     box-shadow: ${Colors.darkpurpleshadow} 0px 0px 0px;
     transition: 0.15s;
   }
