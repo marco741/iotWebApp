@@ -1,0 +1,1 @@
+ssh -t pi@192.168.1.149 'cd /var/www/iotwebapp.ddns.net/; git fetch --all; git reset --hard origin/source; yarn install; yarn run build; pm2 reload all;'
